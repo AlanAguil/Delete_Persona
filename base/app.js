@@ -2,12 +2,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const personasRoutes = require('./src/routes/persona.routes');
+const productoRoutes = require('./src/routes/producto.routes');
 
 const app = express();
 const PORT = 3000;
 
 app.use(bodyParser.json());
 app.use('/api/personas', personasRoutes);
+app.use('/api/productos', productoRoutes);
 
 // Conexión a la base de datos
 mongoose.connect('mongodb+srv://20233tn135:%40Conectado1@clusteralan.lj3nm.mongodb.net/inventario-db?retryWrites=true&w=majority&appName=ClusterAlan', {
